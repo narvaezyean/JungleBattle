@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1ea24e4b503193f498bba6c8384d661b
+guid: a40825e656b75d449aeebfddb1f28ed1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -63,6 +64,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -75,6 +77,20 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -87,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -99,6 +116,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -119,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 262f7d9eaf2259944b9f32a6a70e8d0d
-      internalID: 2081488222
+      spriteID: a0e0564819d025f49a44b1189ab86f37
+      internalID: -605458705
       vertices: []
       indices: 
       edges: []
@@ -140,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3d4f5029aa6cb041b5d32db588a86d3
-      internalID: 2003440072
+      spriteID: d9edcb6d3d56cf7428a6e03c297c11d4
+      internalID: -1225559758
       vertices: []
       indices: 
       edges: []
@@ -161,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61baeff4aec2e79428550068cf3c2fa9
-      internalID: -1244106414
+      spriteID: e993fb1490b4c1f40bc0ef6779230bc2
+      internalID: 1301258816
       vertices: []
       indices: 
       edges: []
@@ -182,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2b94b021e358f54ea0a12a58ee51f4a
-      internalID: 1119506243
+      spriteID: b974a0bb7170a394982c2141dbdbc278
+      internalID: -984918640
       vertices: []
       indices: 
       edges: []
@@ -193,9 +211,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 108
-        y: 1
+        y: 0
         width: 20
-        height: 18
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce8b9b7a1ffa5a5429960816e80b0f8f
-      internalID: 258704497
+      spriteID: 1d2e550a36c390243886bc20c6d0c8c2
+      internalID: -747923123
       vertices: []
       indices: 
       edges: []
@@ -224,8 +242,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c1b5755cc35f8145905cec34c0077ec
-      internalID: -127806558
+      spriteID: 7cf42050a81b81849b48f61c8a3fb0b7
+      internalID: -668750276
       vertices: []
       indices: 
       edges: []
@@ -245,8 +263,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 401644b5fc3404846852cb983e0afac7
-      internalID: 879693318
+      spriteID: 4715cf23ddc3eb64c81b8b84da75e307
+      internalID: 470507000
       vertices: []
       indices: 
       edges: []
@@ -266,8 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbe93f06534efcb4ba49b7846be8ff71
-      internalID: -1164134249
+      spriteID: 00fd85b9a8784d74a8aa0f1b0564d01d
+      internalID: -80182088
       vertices: []
       indices: 
       edges: []
@@ -287,8 +305,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2aa877ef78e755043900244c8573a39e
-      internalID: 1195017562
+      spriteID: 29c7819e3e494cd4882424a5082a81c3
+      internalID: -1937301799
       vertices: []
       indices: 
       edges: []
@@ -298,9 +316,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 239
-        y: 1
+        y: 0
         width: 19
-        height: 18
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -308,8 +326,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c867ac22a397ca40be2e4562754ecc8
-      internalID: 1606671907
+      spriteID: a7c6ed744a38b1247ac8efb488e4de7a
+      internalID: -878348051
       vertices: []
       indices: 
       edges: []
@@ -325,19 +343,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      john_run_0: 2081488222
-      john_run_1: 2003440072
-      john_run_2: -1244106414
-      john_run_3: 1119506243
-      john_run_4: 258704497
-      john_run_5: -127806558
-      john_run_6: 879693318
-      john_run_7: -1164134249
-      john_run_8: 1195017562
-      john_run_9: 1606671907
-  spritePackingTag: 
+      john_run_0: -605458705
+      john_run_1: -1225559758
+      john_run_2: 1301258816
+      john_run_3: -984918640
+      john_run_4: -747923123
+      john_run_5: -668750276
+      john_run_6: 470507000
+      john_run_7: -80182088
+      john_run_8: -1937301799
+      john_run_9: -878348051
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

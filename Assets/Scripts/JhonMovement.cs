@@ -10,17 +10,18 @@ public class JhonMovement : MonoBehaviour
 
     private Rigidbody2D Rigidbody2D; // Llamado al componente Rigid
     private Animator Animator; // Llamado al componente Animator
-    
+
     // Variables de uso solo en clase
     private float Horizontal;
     private bool Grounded;
     private float LastShoot;
+    private int Health = 5;
 
     // Start is called before the first frame update
     void Start()
     {
         // Obtención de datos de los componentes.
-        Rigidbody2D = GetComponent<Rigidbody2D>(); 
+        Rigidbody2D = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
     }
 
@@ -35,7 +36,7 @@ public class JhonMovement : MonoBehaviour
 
         Animator.SetBool("running", Horizontal != 0.0f); // Variable del animator en Unity para identificar el movimiento.
 
-        // Debug.DrawRay(transform.position, Vector3.down, 0.1f, Color.red);
+        Debug.DrawRay(transform.position, Vector3.down * 0.1f, Color.red);
         if (Physics2D.Raycast(transform.position, Vector3.down, 0.1f))
         {
             Grounded = true;
@@ -65,7 +66,7 @@ public class JhonMovement : MonoBehaviour
     private void Shoot()
     {
         Vector3 direction;
-        if (transform.localScale.x == 1.0f) direction  = Vector3.right;
+        if (transform.localScale.x == 1.0f) direction = Vector3.right;
         else direction = Vector3.left;
 
         // Al invocar la función, se modifica el prefab de Bullet para disparar.
@@ -76,5 +77,11 @@ public class JhonMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Rigidbody2D.velocity = new Vector2(Horizontal, Rigidbody2D.velocity.y);
+    }
+
+    public void Hit()
+    {
+        Health = Health - 1;
+        if (Health == 0) Destroy(gameObject);
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
+    public AudioClip Sound; 
     public float Speed; // Velocidad de la bala
 
     private Rigidbody2D Rigidbody2D; // Llamado al componente Rigid
@@ -13,6 +14,7 @@ public class BulletScript : MonoBehaviour
     void Start()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(Sound);
     }
 
     private void FixedUpdate()
@@ -23,5 +25,25 @@ public class BulletScript : MonoBehaviour
     public void SetDirection(Vector2 direction)
     {
         Direction = direction;
+    }
+    // Funcion para destruir la bala
+    public void DestroyBullet()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        JhonMovement john = collision.GetComponent<JhonMovement>();
+        GruntScript grunt = collision.GetComponent<GruntScript>();
+        if (john != null)
+        {
+            john.Hit();
+        }
+        if (grunt != null)
+        {
+            grunt.Hit();
+        }
+        DestroyBullet();
     }
 }
