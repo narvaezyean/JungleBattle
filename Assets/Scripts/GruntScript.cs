@@ -1,65 +1,67 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GruntScript : MonoBehaviour
 {
-    public GameObject BulletPrefab;
-    public GameObject John;
+    public GameObject bulletPrefab;
+    public GameObject john;
+    public AudioClip sound;
+    public ScoreScript scoreScript;
 
-    private float LastShoot;
-    private int Health = 3;
+    public float cooldownTime;
+    public float bulletOffset;
+    public float maxHealth;
+    public float numberOfPoints;
 
-    void Update()
+    private Animator componentAnimator;
+
+    private float lastShoot;
+    private bool canShoot = true;
+
+    void Start()
     {
-        if (John == null) return;
+        componentAnimator = GetComponent<Animator>();
+    }
 
-        Vector3 direction = John.transform.position - transform.position;
+    private void Update()
+    {
+        Vector3 direction = john.transform.position - transform.position;
+
         if (direction.x >= 0.0f) transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
         else transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
 
-        float distance = Mathf.Abs(John.transform.position.x - transform.position.x);
-        if (distance < 1.0f && Time.time > LastShoot + 0.25f)
+        float distanceX = Mathf.Abs(john.transform.position.x - transform.position.x);
+        float distanceY = Mathf.Abs(john.transform.position.y - transform.position.y);
+
+        if (distanceX < 1.0f && distanceY < 0.1f && canShoot && Time.time > lastShoot + cooldownTime)
         {
             Shoot();
-            LastShoot = Time.time;
+            lastShoot = Time.time;
         }
     }
-
     private void Shoot()
     {
-            Vector3 direction;
-            if (transform.localScale.x == 1.0f) direction = Vector3.right;
-            else direction = Vector3.left;
+        Vector3 direction;
 
-            // Al invocar la función, se modifica el prefab de Bullet para disparar.
-            GameObject bullet = Instantiate(BulletPrefab, transform.position + direction * 0.1f, Quaternion.identity);
-            bullet.GetComponent<BulletScript>().SetDirection(direction);
-     }
+        if (transform.localScale.x == 1.0f) direction = Vector3.right;
+        else direction = Vector3.left;
 
-    public void Hit()
+        GameObject bullet = Instantiate(bulletPrefab, transform.position + direction * bulletOffset, Quaternion.identity);
+        bullet.GetComponent<BulletScript>().SetDirection(direction);
+    }
+
+    public void TakeDamage(float damageValue)
     {
-        Health = Health - 1;
-        if (Health == 0) Destroy(gameObject);
+        maxHealth = maxHealth - damageValue;
+        if (maxHealth == 0)
+        {
+            scoreScript.ScorePoints(numberOfPoints);
+            componentAnimator.SetBool("IsDead", true);
+            Camera.main.GetComponent<AudioSource>().PlayOneShot(sound);
+            canShoot = false;
+            Destroy(gameObject, 1.0f);
+        }
     }
 }
-
-//Creamos el vector direccion
-//Transform position es la posicion del enemigo
-//John transform position es la posicion de John
-//la posicion de John - la posicion del enemigo, obtenemos el vector3 direction que va del enemigo a john
-//Si este vector direccion su componente x que va de izquierda a derecha es positivo.
-//Utilizamos el transform.localScale: (1, 1, 1) significa que el objeto no ha sido escalado y tiene su tamaño original en cada eje.  (X, Y, Z)
-
-//Disparo de Grunt
-//Creamos Variable Float - distance
-//Si John esta en la posicion 5 y grunt esta en la posicion 3, 5-3 = 2 estan a 2 de distancia
-//Problema si john esta en la posicion 3 y Grunt en la 5 va dar -2
-//Usamos Mathf.Abs para que siempre de 2 en positivo, realizamos valor absoluto con esa funcion para que de en positivo.
-//Si la distancia es menor a un metro pues que dispare.
-//Llamamos la funcion Shoot
-//Creamos un Delay - Creamos variable Private float Last Shoot como hicimos con John
-
-//Funcion Debug, que vamos a utilizar para debugear para encontrar bugs Debug.Log(Shoot); luego abrimos la consola
-//Una vez comprobamos que la funcion shoot funciona realizamos copy paste de la misma funcion que tiene Jhon
-//Creamos variable publica para el PreFab de la bala

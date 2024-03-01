@@ -1,28 +1,7 @@
 fileFormatVersion: 2
-guid: 75c85716790a2f143b21c76071515bfd
+guid: 0066d42d4fa3f9f4896f1cef28ebfbe1
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 5902855450250165542
-    second: weapon_bullet_0
-  - first:
-      213: -3156122162549437794
-    second: weapon_bullet_1
-  - first:
-      213: -7500341700066412395
-    second: weapon_bullet_2
-  - first:
-      213: -7233278182342934215
-    second: weapon_bullet_3
-  - first:
-      213: 4531275813216471585
-    second: weapon_bullet_4
-  - first:
-      213: 1499340714466408896
-    second: weapon_bullet_5
-  - first:
-      213: -1074786334143915823
-    second: weapon_bullet_6
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -63,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -84,7 +63,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -140,8 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62db3a0e1c72be150800000000000000
-      internalID: 5902855450250165542
+      spriteID: 66c0363607868f046918be307e5af756
+      internalID: -994325513
       vertices: []
       indices: 
       edges: []
@@ -161,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9ac0817d933334d0800000000000000
-      internalID: -3156122162549437794
+      spriteID: 37ed2128c5b11bb48a49238d1ad66ad8
+      internalID: -2093124774
       vertices: []
       indices: 
       edges: []
@@ -182,8 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 598fd7956fe69e790800000000000000
-      internalID: -7500341700066412395
+      spriteID: aeacc0eb7a42e8b47a09a2125e3d95de
+      internalID: 214285195
       vertices: []
       indices: 
       edges: []
@@ -203,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 931cdd311db3e9b90800000000000000
-      internalID: -7233278182342934215
+      spriteID: ffc1bae67c0774548a3b413d0911d5ac
+      internalID: 18036620
       vertices: []
       indices: 
       edges: []
@@ -224,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12a461a285352ee30800000000000000
-      internalID: 4531275813216471585
+      spriteID: 068c998039309b94b8c681ee9d4a089e
+      internalID: -2073839965
       vertices: []
       indices: 
       edges: []
@@ -245,8 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c9fc0b9f6abec410800000000000000
-      internalID: 1499340714466408896
+      spriteID: d595e58a41a4d794391f058648ef2fa9
+      internalID: -1569954049
       vertices: []
       indices: 
       edges: []
@@ -266,8 +245,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d858e706879511f0800000000000000
-      internalID: -1074786334143915823
+      spriteID: 3de49e142ba18b245a39439de0793e92
+      internalID: 2045520596
       vertices: []
       indices: 
       edges: []
@@ -283,13 +262,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      weapon_bullet_0: 5902855450250165542
-      weapon_bullet_1: -3156122162549437794
-      weapon_bullet_2: -7500341700066412395
-      weapon_bullet_3: -7233278182342934215
-      weapon_bullet_4: 4531275813216471585
-      weapon_bullet_5: 1499340714466408896
-      weapon_bullet_6: -1074786334143915823
+      weapon_bullet_0: -994325513
+      weapon_bullet_1: -2093124774
+      weapon_bullet_2: 214285195
+      weapon_bullet_3: 18036620
+      weapon_bullet_4: -2073839965
+      weapon_bullet_5: -1569954049
+      weapon_bullet_6: 2045520596
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
