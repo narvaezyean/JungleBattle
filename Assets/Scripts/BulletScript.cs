@@ -4,46 +4,63 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    public AudioClip Sound; 
-    public float Speed; // Velocidad de la bala
+    public AudioClip sound;
 
-    private Rigidbody2D Rigidbody2D; // Llamado al componente Rigid
-    private Vector2 Direction; // Dirección de la bala.
+    public float speed;
+    public float damageValue;
 
-    // Start is called before the first frame update
+    private Rigidbody2D componentRigidbody2D;
+    private Vector2 directionBullet;
+
     void Start()
     {
-        Rigidbody2D = GetComponent<Rigidbody2D>();
-        Camera.main.GetComponent<AudioSource>().PlayOneShot(Sound);
+        componentRigidbody2D = GetComponent<Rigidbody2D>();
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(sound);
     }
 
     private void FixedUpdate()
     {
-        Rigidbody2D.velocity = Direction * Speed;
+        componentRigidbody2D.velocity = directionBullet * speed;
     }
 
     public void SetDirection(Vector2 direction)
     {
-        Direction = direction;
+        directionBullet = direction;
     }
-    // Funcion para destruir la bala
+
     public void DestroyBullet()
     {
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        JhonMovement john = collision.GetComponent<JhonMovement>();
-        GruntScript grunt = collision.GetComponent<GruntScript>();
+        JohnMovement john = other.GetComponent<JohnMovement>();
+        GruntScript grunt = other.GetComponent<GruntScript>();
+        TurretScript turret = other.GetComponent<TurretScript>();
+        BossEnemyScript boss = other.GetComponent<BossEnemyScript>();
+
         if (john != null)
         {
-            john.Hit();
+            john.TakeDamage(damageValue);
         }
+
         if (grunt != null)
         {
-            grunt.Hit();
+            grunt.TakeDamage(damageValue);
         }
+
+        if (turret != null)
+        {
+            turret.TakeDamage(damageValue);
+        }
+
+        if (boss != null)
+        {
+            boss.TakeDamage(damageValue);
+        }
+
         DestroyBullet();
     }
 }
+
